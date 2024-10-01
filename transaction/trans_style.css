@@ -1,0 +1,286 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    overflow: hidden;
+  }
+  body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #blur {
+    background-color: gray;
+    position: fixed;
+    left: 250px;
+    height: 100%;
+    width: calc(100% - 250px);
+    z-index: 1;
+    opacity: 0.8;
+    display: none;
+  }
+  
+  header {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    display: flex;
+  }
+  #menu_bar {
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu_bar:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+  }
+  #title {
+    height: 50px;
+    width: 250px;
+    font-size: 30px;
+    font-weight: 700;
+    align-items: center;
+    padding-left: 10px;
+    z-index: 1;
+  }
+  #page {
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    flex: 1 1 200px;
+    max-width: 150px;
+  }
+  header > div {
+    height: 100%;
+    max-width: 230px;
+    display: flex;
+    flex-grow: 1;
+    margin-left: auto;
+    position: relative;
+  }
+  header > div > #user_name {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: end;
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+  }
+  header > div > span {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+  @media only screen and (max-width: 900px) {
+    header > div + span {
+      display: none;
+    }
+  }
+  
+  section {
+    flex: 1;
+    /* background-color: rebeccapurple; */
+  }
+  
+  aside {
+    background-color: whitesmoke;
+    position: fixed;
+    z-index: 1;
+    height: calc(100% - 50px);
+    width: 250px;
+    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+  }
+  aside > a {
+    width: 100%;
+    height: 40px;
+    padding-left: 20px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  aside > a:hover {
+    background-color: aqua;
+    cursor: pointer;
+  }
+  aside > a > span {
+    height: 100%;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  main {
+    background-color: rgb(215, 214, 214);
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    height: calc(100% - 50px);
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .header {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 600px;
+    min-height: 50px;
+    background-color: whitesmoke;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  .header > .x {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    min-height: 45px;
+    justify-content: center;
+    align-items: center;
+  }
+  .header > .x > span {
+    height: 40px;
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .active_bar {
+    padding: 0;
+    height: 5px;
+    width: 100%;
+  }
+  #active {
+    background-color: black;
+    display: block;
+    width: 10%;
+    height: 100%;
+    border-radius: 5px;
+    transform: translateX(75%);
+    transition: 0.7s;
+  }
+  
+  .center {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .center > div {
+    position: absolute;
+    overflow  : auto;
+    padding: 0px 5px 5px 5px;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+  }
+  
+  /* TranHis */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  
+  }
+  th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+    background-color: #ddd;
+  }
+  
+  
+  #NewTran {
+    background-color: transparent;
+    display: none;
+    flex-direction: row;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  
+  .card_container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 450px;
+  } 
+  
+  .card {
+    background-color: whitesmoke;
+    margin: 5px;
+    flex: 1 1 450px;
+    min-width: 450px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+  }
+  .card_title {
+    min-height: 50px;
+    width: calc(100% - 60px);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    align-items: center;
+  }
+  .card i {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 5px;
+  }
+  .card .card_content {
+    height: calc(100% - 50px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  
+  #TranX {
+    display: none;
+  }

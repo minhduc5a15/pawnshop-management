@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex in flex box</title>
+    <link rel="stylesheet" href="trans_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body onload="checkScreenWidth()">
+    <div id="blur"></div>
+
+    <header>
+      <i id="menu_bar" class="fas fa-bars"></i>
+      <span id="title">PawnMaster</span>
+      <span id="page">Transaction</span>
+      <div>
+        <h4 id="user_name">Hello, VuzLeeeee</h4>
+        <span>
+          <img
+            src=""
+            style="
+              background-color: rgb(17, 68, 113);
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+            "
+          />
+        </span>
+      </div>
+      <span style="width: 50px"></span>
+    </header>
+
+    <section>
+      <aside id="aside">
+        <a href="/index/index.html">
+          <span><i class="fas fa-home"></i></span> Dashboard
+        </a>
+        <a href="/transaction/transaction.html">
+          <span><i class="fas fa-money-bill"></i></span> Transactions
+        </a>
+        <a href="/inventory/inventory.html">
+          <span><i class="fas fa-archive"></i></span> Inventory</a
+        >
+        <a href="/customers/customers.html">
+          <span><i class="fas fa-users"></i></span> Customers</a
+        >
+        <a href="#">
+          <span><i class="fas fa-shopping-bag"></i></span> Sales</a
+        >
+      </aside>
+
+      <main id="main">
+
+        <div class="header">
+            <div class="x">
+              <span id="btn_TranHis"> Transaction History </span>
+              <span id="btn_NewTran"> New Transaction </span>
+              <span id="btn_TranX"> Transaction X </span>
+              <span id="btn_TranY"> Transaction Y </span>
+            </div>
+            <div class="active_bar">
+              <span id="active">
+
+              </span>
+            </div>
+        </div>
+
+        <div class="center">
+
+          <div id="TranHis">
+            <table>
+
+              <thead>
+                <tr>
+                  <td style="min-width: 100px;"> ID </td>
+                  <td style="min-width: 200px;"> Customer </td>
+                  <td style="min-width: 200px;"> Loan </td>
+                  <td style="min-width: 100px;"> Rate </td>
+                  <td style="min-width: 150px;"> Date Created </td>
+                  <td style="min-width: 150px;"> Expiration Date </td>
+                  <td> Status </td>
+                </tr>
+              </thead>
+
+              <tbody id="tbody">
+                <!-- js  -->
+              </tbody>
+
+            </table>
+          </div>
+
+          <div id="NewTran">
+            <div class="card_container">
+
+              <div class="card_container">
+                <div class="card"> Tạo ttin khách hàng</div>
+                <div class="card"> Tạo thông tin vật phẩm</div>
+              </div>
+              
+              <div class="card_container">
+                <div class="card">
+                  Tạo giao dịch
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="TranX">3</div>
+
+        </div>
+
+      </main>
+    </section>
+
+    <script src="../script.js"></script>
+    <script src="trans_script.js"></script>
+  </body>
+</html>

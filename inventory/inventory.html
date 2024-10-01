@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex in flex box</title>
+    <link rel="stylesheet" href="inven_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body onload="checkScreenWidth()">
+    
+    <div id="blur"></div>
+
+    <header>
+        <i id="menu_bar" class="fas fa-bars"></i>
+        <span id="title">PawnMaster</span>
+        <span id="page">Inventory</span>
+        <div>
+            <h4 id="user_name">Hello, VuzLeeeee</h4>
+            <span>
+                <img src="" style="background-color: rgb(17, 68, 113); width: 40px; height: 40px; border-radius: 50%;">
+            </span>
+        </div>
+        <span style="width: 50px;"></span>
+    </header>
+
+    <aside id="aside">
+        <a href="/index/index.html"> <span><i class="fas fa-home"></i></span> Dashboard </a>
+        <a href="/transaction/transaction.html"> <span><i class="fas fa-money-bill"></i></span> Transactions </a>
+        <a href="/inventory/inventory.html"> <span><i class="fas fa-archive"></i></span> Inventory</a>
+        <a href="/customers/customers.html"> <span><i class="fas fa-users"></i></span> Customers</a>
+        <a href="#"> <span><i class="fas fa-shopping-bag"></i></span> Sales</a>
+    </aside>
+
+    <main id="main">
+        <!-- <pre>
+            Tạo List : Id, tên gọi, thgian nhập, thgian dự kiến(theo hợp đồng) , id chủ sở hữu, trạng thái.
+            Lọc : theo tên khách hàng, thời gian nhập (xuất), trạng thái.
+            Mặc định theo id (id tạo theo thứ tự có trước sau).
+        </pre> -->
+
+        <div class="header">
+            <!-- <span></span> -->
+            <input type="text" placeholder="Search ...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="center">
+
+            <table>
+
+                <thead>
+                  <tr>
+                    <td style="min-width: 200px;"> Name </td>
+                    <td style="min-width: 180px;"> Contract Value </td>
+                    <td style="min-width: 180px;"> Mortgage Amount </td>
+                    <td style="min-width: 150px;"> Mortgage Date </td>
+                    <td style="min-width: 150px;"> ???????????? </td>
+                    <td> Rate </td>
+                    <td> Status </td>
+                  </tr>
+                </thead>
+  
+                <tbody id="tbody">
+                  <!-- js  -->
+                </tbody>
+  
+              </table>
+
+        </div>
+
+    </main>
+
+    <script src="../script.js"> </script>
+    <script src="inven_script.js"> </script>
+
+</body>
+</html>

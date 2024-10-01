@@ -1,0 +1,221 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+#blur{
+    background-color: gray;
+    position: fixed;
+    left: 250px;
+    height: 100%;
+    width: calc(100% - 250px);
+    z-index: 1;
+    opacity: 0.8;
+    display: none;
+}
+
+
+header{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+}
+#menu_bar{
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu_bar:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+}
+#title{
+    height: 50px;
+    width: 250px;
+    font-size: 30px;
+    font-weight: 700;
+    align-items: center;
+    padding-left: 10px;
+    z-index: 1;
+}
+#page{
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    flex: 1 1 200px;
+    max-width: 150px;
+}
+header>div{
+    height: 100%;
+    max-width: 230px;
+    display: flex;
+    flex-grow: 1;
+    margin-left: auto;
+    position: relative;
+}
+header>div>#user_name{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: end;
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+}
+header>div>span{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+    header>div+span{
+        display: none;
+    }
+}
+
+
+aside{
+    background-color: whitesmoke;
+    position: fixed;
+    z-index: 1;
+    height: calc(100% - 50px);
+    width: 250px;
+    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+}
+aside>a{
+    width: 100%;
+    height: 40px;
+    padding-left: 20px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+aside>a:hover{
+    background-color: aqua;
+    cursor: pointer;
+}
+aside>a>span{
+    height: 100%;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    background-color: rgb(215, 214, 214);
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    height: calc(100% - 50px);
+    width: calc(100% - 250px);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.header{
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card_container{
+    flex: 1 1 450px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card{
+    background-color: whitesmoke;
+    margin: 10px;
+    flex: 1 1 200px;
+    height: 180px;
+    max-width: 300px;
+    min-width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    position: relative;
+}
+.card_title{
+    min-height: 50px;
+    width: calc(100% - 60px);
+    display: flex;
+    justify-content:space-between;
+    padding-left: 10px;
+    align-items: center;
+}
+.card i{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+.card .card_content{
+    height: calc(100% - 50px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.center>div{
+    background-color: whitesmoke;
+    flex: 1 1 300px;
+    min-height: 300px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.footer{
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+.footer>div{
+    background-color: whitesmoke;
+    flex: 1 1 300px;
+    min-height: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow: auto;
+}
