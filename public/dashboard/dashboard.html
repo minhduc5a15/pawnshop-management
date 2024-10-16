@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="flex justify-center h-screen w-screen bg-customBlue overflow-hidden" onload="CheckScreenWidth()">
+    <div id="blur" class="h-full w-full bg-gray-600 opacity-80 fixed left-60 z-50 hidden"></div>
+
+    <section class="flex flex-1 flex-col overflow-hidden">
+        <header class="h-10 w-full sticky top-0 bg-customBlue flex flex-row">
+            <span id="menu_space" class="hidden h-10 w-10 justify-center items-center text-gray-800 cursor-pointer"><i id="menu_bar" class="fas fa-bars"></i></span>
+            <span id="title" class="h-10 w-50 flex justify-evenly items-center font-forte text-2xl">PawnMaster</span>
+            <span id="page" class="h-10 w-40 flex justify-evenly items-center text-xl font-medium">Dashboard</span>
+        </header>
+
+        <main class="flex flex-1 bg-customBlue overflow-hidden">
+            <aside id="aside" class="h-full w-50 p-2.5">
+                <ul class=" flex flex-col">
+                    <li><a class="w-full h-10 flex flex-row items-center" href="/public/dashboard/dashboard.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-home"></i></span> Dashboard </a></li>
+                    
+                    <li id="tran"><div class="w-full h-10 flex flex-row items-center cursor-pointer"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-money-bill"></i></span> Transaction </div></li>
+                        <li id="tran_his" class="hidden"><a class="w-full h-10 flex flex-row items-center pl-4" href="/public/transaction/transaction.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-history"></i></span> History </a></li>
+                        <li id="cre_tran" class="hidden"><a class="w-full h-10 flex flex-row items-center pl-4" href="/public/transaction/create_transaction.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-plus"></i></span> Create New </a></li>
+
+                    <li><a class="w-full h-10 flex flex-row items-center" href="../customer/customer.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-users"></i></span> Customers </a></li>
+                    <li><a class="w-full h-10 flex flex-row items-center" href="/public/inventory/inventory.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-archive"></i></span> Inventory </a></li>
+                </ul>
+            </aside>
+
+            <section id="section" class="flex flex-col flex-1 pb-2.5 pl-2.5 pr-1 overflow-y-scroll custom-scrollbar">
+                <header class="w-full flex flex-wrap">
+                    <div class="flex justify-evenly flex-wrap flex-1 h-fit">
+
+                        <div class="bg-white flex-1 h-56 min-w-72 rounded-lg shadow-custom m-2.5 relative">
+
+                            <header class="w-full h-16 flex items-center justify-evenly p-1">
+                                <div class="h-full w-1/2">
+                                    <h1 class="font-bold text-lg pl-2.5">Total Loans</h1>
+                                    <p class="text-sm pl-5">Last 7 days</p>
+                                </div>
+                                <main id="Loans_content" class="h-full w-1/2 flex flex-col justify-center items-end pr-5">
+                                    <h1 class="font-semibold text-2xl">XXX $</h1>
+                                    <p class="text-sm">3.5%</p>
+                                </main>
+                            </header>
+                            
+                            <section class="flex h-40 w-full items-center justify-center p-2.5 pt-0">
+                                <canvas id="Loans"></canvas>
+                            </section>
+
+                        </div>
+
+                        <div class="bg-white flex-1 h-56 min-w-72 rounded-lg shadow-custom m-2.5 relative">
+
+                            <header class="w-full h-16 flex items-center justify-evenly p-1">
+                                <div class="h-full w-1/2">
+                                    <h1 class="font-bold text-lg pl-2.5">Due Today</h1>
+                                    <p class="text-sm pl-5">Last 7 days</p>
+                                </div>
+                                <main id="Loans_content" class="h-full w-1/2 flex flex-col justify-center items-end pr-5">
+                                    <h1 class="font-semibold text-2xl">XXX $</h1>
+                                    <p class="text-sm">3.5%</p>
+                                </main>
+                            </header>
+                            
+                            <section class="flex h-40 w-full items-center justify-center p-2.5 pt-0">
+                                <canvas id="DueToday"></canvas>
+                            </section>
+
+                        </div>
+                        <div class="bg-white flex-1 h-56 min-w-72 rounded-lg shadow-custom m-2.5 relative">
+
+                            <header class="w-full h-16 flex items-center justify-evenly p-1">
+                                <div class="h-full w-1/2">
+                                    <h1 class="font-bold text-lg pl-2.5">New Customer</h1>
+                                    <p class="text-sm pl-5">Last 7 days</p>
+                                </div>
+                                <main id="Loans_content" class="h-full w-1/2 flex flex-col justify-center items-end pr-5">
+                                    <h1 class="font-semibold text-2xl">XXX $</h1>
+                                    <p class="text-sm">3.5%</p>
+                                </main>
+                            </header>
+                            
+                            <section class="flex h-40 w-full items-center justify-center p-2.5 pt-0">
+                                <canvas id="Customer"></canvas>
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                    
+                </header>
+
+                <main class="w-full flex justify-center items-center flex-wrap">
+
+                    <div class="bg-white shadow-custom rounded-lg flex-1 min-h-96 min-w-125 m-2.5 overflow-auto">
+                        <header class="h-11 w-full border-b-4 border-b-gray-500">
+                            <div class="h-full w-full flex items-center pl-5">
+                                <h1 class="text-2xl font-bold">Latest Transactions</h1>
+                            </div>
+                        </header>
+                        <main class="h-85 p-2.5">
+                            <table class="h-full w-full overflow-scroll custom-scrollbar">
+                                <thead class="border-black border-b-2">
+                                    <tr>
+                                        <td class="pt-2.5 pb-2.5 text-center min-w-64"> Customer </td>
+                                        <td class="pt-2.5 pb-2.5 text-center min-w-36"> Loan </td>
+                                        <td class="pt-2.5 pb-2.5 text-center"> XXXXXXXXX </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="pt-2.5 pb-2.5 text-center">Phạm Minh Đứccccccccccccccccc</td>
+                                        <td class="pt-2.5 pb-2.5 text-center">1000</td>
+                                        <td class="pt-2.5 pb-2.5 text-center">Redeem</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt-2.5 pb-2.5 text-center">Phạm Minh Đứccccccccccccccccc</td>
+                                        <td class="pt-2.5 pb-2.5 text-center">1000</td>
+                                        <td class="pt-2.5 pb-2.5 text-center">Redeem</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt-2.5 pb-2.5 text-center">Phạm Minh Đứccccccccccccccccc</td>
+                                        <td class="pt-2.5 pb-2.5 text-center">1000</td>
+                                        <td class="pt-2.5 pb-2.5 text-center">Redeem</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt-2.5 pb-2.5 text-center">Phạm Minh Đứccccccccccccccccc</td>
+                                        <td class="pt-2.5 pb-2.5 text-center">1000</td>
+                                        <td class="pt-2.5 pb-2.5 text-center">Redeem</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </main>
+                    </div>
+
+                    <div class="bg-white shadow-custom rounded-lg flex-1 min-h-96 min-w-125 m-2.5 overflow-auto">
+                        <header class="h-11 w-full border-b-4 border-b-gray-500">
+                            <div class="h-full w-full flex items-center pl-5">
+                                <h1 class="text-2xl font-bold">Notification</h1>
+                            </div>
+                        </header>
+                        <main class="h-85 p-2.5">
+                            <table class="bg-black h-full w-full">
+
+                            </table>
+                        </main>
+                    </div>
+
+                </main>
+
+                <footer class="w-full min-h-96 p-2.5">
+                    <div class="bg-white w-full h-full shadow-custom rounded-lg"></div>
+                </footer>
+
+            </section>
+        </main>
+    </section>
+
+    <script src="../script.js"></script>
+    <script src="./dashboard.js"></script>
+    <script src="./loan_chart.js"></script>
+    <script src="./duetoday_chart.js"></script>
+    <script src="./customer_chart.js"></script>
+
+</body>
+</html>

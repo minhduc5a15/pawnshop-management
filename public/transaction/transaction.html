@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="flex justify-center h-screen w-screen bg-customBlue overflow-hidden" onload="CheckScreenWidth()">
+    <div id="blur" class="h-full w-full bg-gray-600 opacity-80 fixed left-60 z-50 hidden"></div>
+
+    <section class="flex flex-1 flex-col overflow-hidden">
+        <header class="h-10 w-full sticky top-0 bg-customBlue flex flex-row">
+            <span id="menu_space" class="hidden h-10 w-10 justify-center items-center text-gray-800 cursor-pointer"><i id="menu_bar" class="fas fa-bars"></i></span>
+            <span id="title" class="h-10 w-50 flex justify-evenly items-center font-forte text-2xl">PawnMaster</span>
+            <span id="page" class="h-10 w-50 flex justify-evenly items-center text-xl font-medium">Transaction History</span>
+        </header>
+
+        <main class="flex flex-1 bg-customBlue overflow-hidden">
+            <aside id="aside" class="h-full w-50 p-2.5">
+                <ul class=" flex flex-col">
+                    <li><a class="w-full h-10 flex flex-row items-center" href="/public/dashboard/dashboard.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-home"></i></span> Dashboard </a></li>
+                    
+                    <li id="tran"><div class="w-full h-10 flex flex-row items-center cursor-pointer"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-money-bill"></i></span> Transaction </div></li>
+                        <li id="tran_his" class=""><a class="w-full h-10 flex flex-row items-center pl-4" href="/public/transaction/transaction.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-history"></i></span> History </a></li>
+                        <li id="cre_tran" class=""><a class="w-full h-10 flex flex-row items-center pl-4" href="/public/transaction/create_transaction.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-plus"></i></span> Create New </a></li>
+
+                    <li><a class="w-full h-10 flex flex-row items-center" href="/public/customer/customer.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-users"></i></span> Customers </a></li>
+                    <li><a class="w-full h-10 flex flex-row items-center" href="/public/inventory/inventory.html"> <span class="flex justify-center items-center h-full w-10"><i class="fas fa-archive"></i></span> Inventory </a></li>
+                </ul>
+            </aside>
+
+            <section id="section" class="flex flex-col flex-1 pb-2.5 pl-2.5 pr-1 overflow-hidden">
+                <header class="h-fit w-full p-2.5 pb-0">
+                    <main class="h-fit w-fit rounded-lg shadow-custom overflow-hidden">
+
+                        <div class="h-10 bg-white flex flex-row">
+
+                            <div class="h-10 w-50 bg-white flex flex-row justify-evenly">
+                                <h1 class="h-full w-16 flex items-center pl-2.5"> Filter : </h1>
+                                
+                                <select id="statusFilter" class="outline-none h-full w-32" onchange="filterTableStatus()">
+                                    <option value="all"> All </option>
+                                    <option value="payInterest">Pay Interest </option>
+                                    <option value="redeem">Redeem</option>
+                                    <option value="liquidate">Liquidate</option>
+                                    <option value="???">?????????</option>
+                                </select>
+                            </div>
+
+                            <div class="flex-1 max-w-96 h-full flex items-center flex-row ml-5 pr-2.5 rounded-full overflow-hidden">
+                                <input type="text" class="flex-1 h-8 min-w-52 outline-none bg-gray-400 pl-5" placeholder="search...">
+                                <span class="h-8 w-8 flex justify-center items-center bg-gray-400 rounded-e-full">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="h-1.5 w-full bg-black">
+                            <div id="" class="h-full w-10 bg-black rounded-sm"></div>
+                        </div>
+                    </main>
+                </header>
+
+                <main class="w-full h-full flex p-2.5 pb-1 overflow-hidden">
+
+                    <div class="bg-white shadow-custom rounded-lg flex-1 min-h-80 min-w-75 overflow-scroll custom-scrollbar">
+                        <table class="w-full">
+                            <thead class="border-black border-b-2">
+                                <tr>
+                                    <td class="p-2.5 text-center"> ID </td>
+                                    <td class="p-2.5 text-center min-w-64"> Customer </td>
+                                    <td class="p-2.5 text-center min-w-52"> Loan </td>
+                                    <td class="p-2.5 text-center"> Rate </td>
+                                    <td class="p-2.5 text-center"> Date Created </td>
+                                    <td class="p-2.5 text-center"> Expiration Date </td>
+                                    <td class="p-2.5 text-center"> Status </td>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tbody">
+                                <!-- js  -->
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </main>
+            </section>
+        </main>
+    </section>
+
+    <script src="../script.js"></script>
+    <script src="./transcation.js"></script>
+
+</body>
+</html>
