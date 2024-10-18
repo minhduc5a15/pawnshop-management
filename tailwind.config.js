@@ -4,6 +4,9 @@ module.exports = {
   content: ["./public/**/*.html", "./public/**/*.js"],
   theme: {
     extend: {
+      screens: {
+        xs: "425px", // Breakpoint tùy chỉnh cho min-width 300px
+      },
       fontSize: {
         small: "10px",
       },
@@ -29,6 +32,7 @@ module.exports = {
         150: "600px",
         135: "540px",
         125: "500px",
+        121.5: "486px",
         116.5: "466px",
         75: "300px",
       },

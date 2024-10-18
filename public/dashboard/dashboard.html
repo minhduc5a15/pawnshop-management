@@ -97,16 +97,15 @@
                     
                 </header>
 
-                <main class="w-full flex justify-center items-center flex-wrap">
-
-                    <div class="bg-white shadow-custom rounded-lg flex-1 min-h-96 min-w-125 m-2.5 overflow-auto">
+                <main class="grid grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-2 p-2.5">
+                    <div class="sm:col-span-1 bg-white shadow-custom rounded-lg">
                         <header class="h-11 w-full border-b-4 border-b-gray-500">
                             <div class="h-full w-full flex items-center pl-5">
                                 <h1 class="text-2xl font-bold">Latest Transactions</h1>
                             </div>
                         </header>
-                        <main class="h-85 p-2.5">
-                            <table class="h-full w-full overflow-scroll custom-scrollbar">
+                        <main class="h-85 p-2.5 overflow-auto custom-scrollbar">
+                            <table class="h-full w-full overflow-auto custom-scrollbar">
                                 <thead class="border-black border-b-2">
                                     <tr>
                                         <td class="pt-2.5 pb-2.5 text-center min-w-64"> Customer </td>
@@ -140,7 +139,7 @@
                         </main>
                     </div>
 
-                    <div class="bg-white shadow-custom rounded-lg flex-1 min-h-96 min-w-125 m-2.5 overflow-auto">
+                    <div class="sm:col-span-1 bg-white shadow-custom rounded-lg flex-1 min-h-96 overflow-auto">
                         <header class="h-11 w-full border-b-4 border-b-gray-500">
                             <div class="h-full w-full flex items-center pl-5">
                                 <h1 class="text-2xl font-bold">Notification</h1>
