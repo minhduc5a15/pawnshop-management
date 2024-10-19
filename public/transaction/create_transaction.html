@@ -56,18 +56,26 @@
                             <form class="p-2.5 pb-0">
                                 <div class="border-b border-gray-900/60">
                                     <h1 class="text-xl font-semibold leading-7 text-gray-900">Customer Information</h1>
+                                    
+                                    <div class="flex items-center flex-row">
+                                        <label for="CCCD-num" class="block text-sm font-medium leading-6 text-gray-900">CCCD : </label>
+                                        <div>
+                                            <input type="text" name="CCCD-num" id="CCCD-num" class="ml-2.5 block w-full rounded-md border-0 pl-2.5 pt-1 pb-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    
                                     <div class="mt-3 grid grid-cols-2 gap-x-2 gap-y-1">
                                         <div class="col-span-full lg:col-span-1 grid grid-cols-4 gap-x-2 gap-y-1 sm:grid-cols-6 md:grid-cols-9">
 
                                             <div class="col-span-full xs:col-span-2 md:col-span-3">
-                                                <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
+                                                <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First Name</label>
                                                 <div>
                                                     <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                 </div>
                                             </div>
 
                                             <div class="col-span-full xs:col-span-2 md:col-span-3">
-                                                <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
+                                                <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last Name</label>
                                                 <div>
                                                     <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                 </div>
@@ -95,7 +103,7 @@
                                             </div>
 
                                             <div class="col-span-full">
-                                                <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street address</label>
+                                                <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street Address</label>
                                                 <div>
                                                     <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                 </div>
@@ -296,20 +304,283 @@
                                 </div>
                             </form>
                         </section>
-
-                        <footer></footer>
                     </div>
 
-                    <div id="page_pay" class="bg-white shadow-custom rounded-lg flex-1 min-h-80 min-w-75 overflow-auto hidden">
-                        2222
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                    
+                    <div id="page_pay" class="bg-white shadow-custom rounded-lg flex-1 min-h-80 min-w-75 overflow-hidden hidden">
+                        <section class="w-full overflow-x-hidden overflow-y-auto custom-scrollbar">
+                            <form class="p-2.5 pb-0">
+                                <div class="border-b border-gray-900/60">
+                                    <h1 class="text-xl font-semibold leading-7 text-gray-900">Customer Information</h1>
+                                    
+                                    <div class="flex items-center flex-row">
+                                        <label for="CCCD-num" class="block text-sm font-medium leading-6 text-gray-900">CCCD : </label>
+                                        <div class="flex w-fit">
+                                            <input type="text" name="CCCD-num" id="CCCD-num" class="ml-2.5 flex w-40 rounded-s-md border-0 pl-2.5 pt-1 pb-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                            <button class="h-8 w-8 bg-slate-400 rounded-e-md flex justify-center items-center"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3 mb-3 grid grid-cols-2 gap-x-2 gap-y-1">
+                                        <div class="col-span-full lg:col-span-1 grid grid-cols-4 gap-x-2 gap-y-1 sm:grid-cols-6 md:grid-cols-9">
+                                        
+                                            <div class="col-span-full xs:col-span-2 md:col-span-3">
+                                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+                                                <div>
+                                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-span-full xs:col-span-2 md:col-span-3">
+                                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Phone Number</label>
+                                                <div>
+                                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-span-full xs:col-span-2 md:col-span-3">
+                                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
+                                                <div>
+                                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+
+                                        <div class="col-span-full lg:col-span-1 grid grid-cols-1 gap-x-2 gap-y-1">
+                                            <div class="col-span-full xs:col-span-3">
+                                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Street Address</label>
+                                                <div>
+                                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------                           -->
+                            
+                            <form class="p-2.5 pb-0">
+                                <div class="border-b border-gray-900/60">
+                                    <h1 class="text-xl font-semibold leading-7 text-gray-900">Asset Information</h1>
+                                    <div class="mt-3 mb-3 h-56 pl-2.5 pr-2.5 overflow-auto">
+                                        <table class="w-full h-full">
+                                            <thead class="border-b border-black">
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody-pay">
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </form>
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+
+                            <form class="p-2.5 pb-0">
+                                <h1 class="text-xl font-semibold leading-7 text-gray-900">Information</h1>
+                                <div class="p-2.5 pt-1">
+                                    <p> Đã chọn 3 đồ vật </p>
+                                    <p> Tổng giá trị là : 1000.000 VNĐ </p>
+                                </div>
+                                <div class="flex flex-row justify-evenly w-80">
+                                    <button class="h-10 w-20 bg-cyan-400 rounded-lg"> Save </button>
+                                    <button class="h-10 w-20 bg-cyan-400 rounded-lg "> Delete </button>
+                                </div>
+                            </form>
+
+                        </section>
                     </div>
 
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                    
                     <div id="page_redeem" class="bg-white shadow-custom rounded-lg flex-1 min-h-80 min-w-75 overflow-auto hidden">
-                        33333
+                        <section class="w-full overflow-auto custom-scrollbar">
+                            <form class="p-2.5 pb-0">
+                                <div class="border-b border-gray-900/60">
+                                    <h1 class="text-xl font-semibold leading-7 text-gray-900">Customer Information</h1>
+                                    
+                                    <div class="flex items-center flex-row">
+                                        <label for="CCCD-num" class="block text-sm font-medium leading-6 text-gray-900">CCCD : </label>
+                                        <div class="flex w-fit">
+                                            <input type="text" name="CCCD-num" id="CCCD-num" class="ml-2.5 flex w-40 rounded-s-md border-0 pl-2.5 pt-1 pb-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                            <button class="h-8 w-8 bg-slate-400 rounded-e-md flex justify-center items-center"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3 mb-3 grid grid-cols-2 gap-x-2 gap-y-1">
+                                        <div class="col-span-full lg:col-span-1 grid grid-cols-4 gap-x-2 gap-y-1 sm:grid-cols-6 md:grid-cols-9">
+                                        
+                                            <div class="col-span-full xs:col-span-2 md:col-span-3">
+                                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+                                                <div>
+                                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-span-full xs:col-span-2 md:col-span-3">
+                                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Phone Number</label>
+                                                <div>
+                                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-span-full xs:col-span-2 md:col-span-3">
+                                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
+                                                <div>
+                                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                        <div class="col-span-full lg:col-span-1 grid grid-cols-1 gap-x-2 gap-y-1">
+                                            <div class="col-span-full xs:col-span-3">
+                                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Street Address</label>
+                                                <div>
+                                                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------                             -->
+
+                            <form class="p-2.5 pb-0">
+                                <div class="border-b border-gray-900/60">
+                                    <h1 class="text-xl font-semibold leading-7 text-gray-900">Asset Information</h1>
+                                    <div class="mt-3 mb-3 h-56 pl-2.5 pr-2.5 overflow-auto">
+                                        <table class="w-full h-full">
+                                            <thead class="border-b border-black">
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody-redeem">
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-2 text-center"> <input type="checkbox"></td>
+                                                    <td class="p-2 text-center"> Item Code </td>
+                                                    <td class="p-2 text-center"> Collateral </td>
+                                                    <td class="p-2 text-center"> Estimated Value </td>
+                                                    <td class="p-2 text-center"> Loan Amount </td>
+                                                    <td class="p-2 text-center"> Pawn Date </td>
+                                                    <td class="p-2 text-center"> Redemption Date </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </form>
+                            
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+
+                            <form class="p-2.5 pb-0">
+                                <h1 class="text-xl font-semibold leading-7 text-gray-900">Information</h1>
+                                <div class="p-2.5 pt-1">
+                                    <p> Đã chọn 3 đồ vật </p>
+                                    <p> Tổng giá trị là : 1000.000 VNĐ </p>
+                                </div>
+                                <div class="flex flex-row justify-evenly w-80">
+                                    <button class="h-10 w-20 bg-cyan-400 rounded-lg"> Save </button>
+                                    <button class="h-10 w-20 bg-cyan-400 rounded-lg "> Delete </button>
+                                </div>
+                            </form>
+
+                        </section>
                     </div>
 
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                    
                     <div id="page_liquidate" class="bg-white shadow-custom rounded-lg flex-1 min-h-80 min-w-75 overflow-auto hidden">
-                        444444
+                        Chưa biết ????
                     </div>
                 </main>
             </section>
