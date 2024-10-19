@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: "425px", // Breakpoint tùy chỉnh cho min-width 300px
+        xs: "425px",
+        ss: "500px",
       },
       fontSize: {
         small: "10px",
@@ -45,9 +46,13 @@ module.exports = {
         121.5: "486px",
       },
       translate: {
+        28.0: "28px",
         31.6: "31.6px",
+        140.0: "140px",
         147.2: "147.2px",
+        252.0: "252px",
         262.8: "262.8px",
+        364.0: "364px",
         378.4: "378.4px",
       },
     },

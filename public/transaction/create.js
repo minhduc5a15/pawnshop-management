@@ -12,15 +12,22 @@ const pages = {
 };
 
 const translateClasses = [
-  "translate-x-31.6",
-  "translate-x-147.2",
-  "translate-x-262.8",
-  "translate-x-378.4",
+  "translate-x-28",
+  "translate-x-140",
+  "translate-x-252",
+  "translate-x-364",
+];
+const SStranslateClasses = [
+  "ss:translate-x-31.6",
+  "ss:translate-x-147.2",
+  "ss:translate-x-262.8",
+  "ss:translate-x-378.4",
 ];
 
 function ChangeActiveBar(x) {
   // Remove all translate-x classes
   active_bar.classList.remove(...translateClasses);
+  active_bar.classList.remove(...SStranslateClasses);
 
   // Hide all pages
   Object.values(pages).forEach((page) => {
@@ -30,6 +37,7 @@ function ChangeActiveBar(x) {
 
   // Add the appropriate translate-x class
   active_bar.classList.add(translateClasses[x - 1]);
+  active_bar.classList.add(SStranslateClasses[x - 1]);
 
   // Show the correct page
   pages[x].classList.add("flex");
