@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { type TransactionProps as Transactions } from '@/lib/types';
+import { type TransactionProps as Transaction } from '@/lib/types';
 
 const axiosInstance = axios.create({
     baseURL: '/api',
@@ -11,17 +11,19 @@ const axiosInstance = axios.create({
     },
 });
 
-export const useTransactionQuery = () => {
+type TransactionTypes = Transaction['type'];
+
+export const useTransactionQuery = (typeFilter?: TransactionTypes) => {
     return useQuery({
         queryKey: ['transactions'],
         queryFn: async () => {
-            const { data } = await axiosInstance.get<Transactions[]>('/transactions');
+            const { data } = await axiosInstance.get<Transaction[]>('/transactions');
 
             if (!Array.isArray(data)) {
                 throw new Error('Invalid data');
             }
 
-            return data.sort((a, b) => {
+            let filteredData = data.sort((a, b) => {
                 const aDate = new Date(a.date);
                 const bDate = new Date(b.date);
 
@@ -33,6 +35,12 @@ export const useTransactionQuery = () => {
                 }
                 return 0;
             });
+
+            if (typeFilter) {
+                filteredData = filteredData.filter((transaction) => transaction.type === typeFilter);
+            }
+
+            return filteredData;
         },
     });
 };

@@ -24,7 +24,7 @@ export const TransactionsTable = () => {
     const { useTransactionQuery } = useData();
     const { data, isLoading } = useTransactionQuery();
 
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState<number>(1);
 
     if (isLoading) {
         return (
@@ -51,7 +51,6 @@ export const TransactionsTable = () => {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>ID</TableHead>
                             <TableHead>Customer ID</TableHead>
                             <TableHead>Pawned Item ID</TableHead>
                             <TableHead>Type</TableHead>
@@ -62,7 +61,6 @@ export const TransactionsTable = () => {
                     <TableBody>
                         {currentTransactions.map((transaction) => (
                             <TableRow key={transaction.id}>
-                                <TableCell>{transaction.id}</TableCell>
                                 <TableCell>{transaction.customerId}</TableCell>
                                 <TableCell>{transaction.pawnedItemId}</TableCell>
                                 <TableCell>

@@ -3,7 +3,7 @@
 import { type ReactNode, createContext, useContext, useRef, useEffect } from 'react';
 import { useStore } from 'zustand';
 
-import { type GlobalStore, createGlobalStore } from '@/lib/stores/global-store';
+import { type GlobalStore, TransactionTypes, createGlobalStore } from '@/lib/stores/global-store';
 
 export type GlobalStoreApi = ReturnType<typeof createGlobalStore>;
 
@@ -16,7 +16,7 @@ export interface GlobalStoreProviderProps {
 export const GlobalStoreProvider = ({ children }: GlobalStoreProviderProps) => {
     const store = useRef<GlobalStoreApi>(createGlobalStore());
 
-    const { setWindowDimensions } = store.current.getState();
+    const { setWindowDimensions, setSearchTransaction, setTransactionFilter, currentPage } = store.current.getState();
 
     useEffect(() => {
         const handleResize = () => {
@@ -27,6 +27,23 @@ export const GlobalStoreProvider = ({ children }: GlobalStoreProviderProps) => {
 
         return () => window.removeEventListener('resize', handleResize);
     }, [setWindowDimensions]);
+
+    useEffect(() => {
+        if (currentPage !== 'transactions') return;
+        const searchParams = new URLSearchParams(window.location.search);
+
+        if (searchParams.get('search')) {
+            setSearchTransaction(searchParams.get('search') || '');
+        }
+
+        if (searchParams.get('filter')) {
+            let filter = searchParams.get('filter');
+            if (!['all', 'pawn', 'redemption'].includes(filter || '')) {
+                filter = 'all';
+            }
+            setTransactionFilter(filter as TransactionTypes);
+        }
+    }, [currentPage, setSearchTransaction, setTransactionFilter]);
 
     return <GlobalStoreContext.Provider value={store.current}>{children}</GlobalStoreContext.Provider>;
 };
