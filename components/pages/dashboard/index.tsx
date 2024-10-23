@@ -104,7 +104,7 @@ const NewTransactionsChart = () => {
                 labels: last7days,
                 datasets: [
                     {
-                        label: 'Ammount (₫)',
+                        label: 'Amount (₫)',
                         data: [12000, 15000, 8000, 18000, 20000, 22000, 25000],
                         barThickness: 10,
                         maxBarThickness: 15,

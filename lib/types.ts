@@ -15,8 +15,8 @@ export interface TransactionProps {
     id: string; // Mã định danh giao dịch
     customerId: string; // Mã định danh khách hàng
     pawnedItemId: string; // Mã định danh tài sản liên quan
-    type: 'pawn' | 'interest_payment' | 'redemption'; // Loại giao dịch (cầm cố, trả lãi, chuộc tài sản)
-    amount: number; // Số tiền giao dịch (ví dụ, số tiền vay hoặc số tiền trả lãi)
+    type: 'pawn' | 'redemption'; // Loại giao dịch (cầm cố, chuộc tài sản)
+    amount: number; // Số tiền giao dịch (ví dụ, số tiền giao dịch)
     date: Date; // Ngày thực hiện giao dịch
 }
 

@@ -1,5 +1,5 @@
 import { createStore } from 'zustand/vanilla';
-import { useRouter } from 'next/navigation'; // Import useRouter từ next/navigation
+import { useRouter } from 'next/navigation';
 import { UserAuthentication } from '@/lib/types';
 import axios from 'axios';
 
@@ -20,7 +20,7 @@ export const defaultInitState = {
 
 export const createAuthStore = (initState: AuthStates = defaultInitState) => {
     return createStore<AuthStore>()((set) => {
-        const router = useRouter(); // Khởi tạo useRouter ở đây
+        const router = useRouter();
 
         return {
             ...initState,

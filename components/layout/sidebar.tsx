@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Home, Banknote, Package, Users, PackagePlus, X } from 'lucide-react';
 import { useGlobal } from '@/lib/hooks/useGlobal';
+import { useRouter } from 'next/navigation';
 
 interface SidebarItem {
     name: string;
@@ -21,6 +22,8 @@ export function Sidebar() {
     const { isOpenSidebar, closeSidebar } = useGlobal();
 
     const [isMobile, setIsMobile] = useState(false);
+
+    const router = useRouter();
 
     useEffect(() => {
         const checkScreenSize = () => {
@@ -53,7 +56,14 @@ export function Sidebar() {
             </div>
             <nav className="mt-6">
                 {SidebarItems.map((item, index) => (
-                    <Button key={index} variant="ghost" className="w-full justify-start px-4 py-2 text-left hover:bg-accent">
+                    <Button
+                        key={index}
+                        onClick={() => {
+                            router.push(`/${item.name.toLowerCase()}`);
+                        }}
+                        variant="ghost"
+                        className="w-full justify-start px-4 py-2 text-left hover:bg-accent"
+                    >
                         {item.icon}
                         <span className="text-md">{item.name}</span>
                     </Button>

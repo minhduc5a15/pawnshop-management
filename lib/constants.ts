@@ -5,6 +5,7 @@ export const LOGIN_PENDING: string = 'Signing in...';
 export const JWT_SECRET: string | undefined = process.env.JWT_SECRET;
 export const INTEREST_RATE = 0.05; // 5%
 export const DAY = 24 * 60 * 60 * 1000; // 1 day = 24 * 60 * 60 * 1000 ms
+export const ROWS_PER_PAGE = 20;
 
 export enum Weekday {
     Monday = 1,
