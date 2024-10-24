@@ -14,14 +14,14 @@ export interface CustomerProps {
 export interface TransactionProps {
     id: string; // Mã định danh giao dịch
     customerId: string; // Mã định danh khách hàng
-    pawnedItemId: string; // Mã định danh tài sản liên quan
+    assetId: string; // Mã định danh tài sản liên quan
     type: 'pawn' | 'redemption'; // Loại giao dịch (cầm cố, chuộc tài sản)
     amount: number; // Số tiền giao dịch (ví dụ, số tiền giao dịch)
     date: Date; // Ngày thực hiện giao dịch
 }
 
 // Kiểu dữ liệu Tài sản cầm cố (PawnedItem)
-export interface ItemProps {
+export interface AssetProps {
     id: string;
     name: string; // tên tài sản
     description?: string;
@@ -32,6 +32,11 @@ export interface ItemProps {
     interestRate: number; // lãi suất cầm cố, mặc định là 5%/tháng, lãi đơn
     customerId: string;
     status: 'active' | 'redeemed'; // Trạng thái tài sản (đang cầm cố hoặc đã chuộc)
+}
+
+export interface TransactionTable extends TransactionProps {
+    customer: CustomerProps;
+    asset: AssetProps;
 }
 
 // Kiểu dữ liệu Báo cáo tài chính (FinancialReport)

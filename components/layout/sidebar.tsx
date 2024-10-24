@@ -14,12 +14,12 @@ interface SidebarItem {
 const SidebarItems: SidebarItem[] = [
     { name: 'Dashboard', icon: <Home className="mr-2 size-5" /> },
     { name: 'Transactions', icon: <Banknote className="mr-2 size-5" /> },
-    { name: 'Pawns', icon: <Package className="mr-2 size-5" /> },
+    { name: 'Assets', icon: <Package className="mr-2 size-5" /> },
     { name: 'Customers', icon: <Users className="mr-2 size-5" /> },
 ];
 
 export function Sidebar() {
-    const { isOpenSidebar, closeSidebar } = useGlobal();
+    const { isOpenSidebar, closeSidebar, transactionFilter, searchTransaction } = useGlobal();
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -27,7 +27,7 @@ export function Sidebar() {
 
     useEffect(() => {
         const checkScreenSize = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < 1024);
         };
 
         checkScreenSize();
@@ -59,7 +59,13 @@ export function Sidebar() {
                     <Button
                         key={index}
                         onClick={() => {
-                            router.push(`/${item.name.toLowerCase()}`);
+                            if (item.name === 'Transactions') {
+                                const searchParams = new URLSearchParams();
+                                searchParams.append('search', searchTransaction);
+                                searchParams.append('filter', transactionFilter);
+                                router.push(`/transactions?${searchParams.toString()}`);
+                            }
+                            else router.push(`/${item.name.toLowerCase()}`);
                         }}
                         variant="ghost"
                         className="w-full justify-start px-4 py-2 text-left hover:bg-accent"

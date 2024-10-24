@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useData } from '@/lib/hooks/useData';
 import {
     Table,
@@ -19,12 +19,22 @@ import {
     Badge,
 } from '@/components/ui';
 import { ROWS_PER_PAGE } from '@/lib/constants';
+import { useGlobal } from '@/lib/hooks/useGlobal';
+import { TransactionTable } from '@/lib/types';
 
 export const TransactionsTable = () => {
     const { useTransactionQuery } = useData();
-    const { data, isLoading } = useTransactionQuery();
+    const { transactionFilter } = useGlobal();
+
+    const { data: transactions, isLoading } = useTransactionQuery();
 
     const [currentPage, setCurrentPage] = useState<number>(1);
+
+    const data: TransactionTable[] | undefined = useMemo(() => {
+        if (isLoading) return [];
+        if (transactionFilter === 'all') return transactions;
+        return transactions?.filter((transaction) => transaction.type === transactionFilter);
+    }, [transactions, transactionFilter, isLoading]);
 
     if (isLoading) {
         return (
@@ -40,31 +50,32 @@ export const TransactionsTable = () => {
     const currentTransactions = data?.slice(startIndex, startIndex + ROWS_PER_PAGE) || [];
 
     return (
-        <Card className="container mx-auto px-4 py-4">
+        <Card className="container mx-auto px-3 py-3">
             <CardHeader className={'flex flex-row items-center justify-between w-full'}>
                 <CardTitle>
                     <p className="text-2xl font-semibold text-gray-800">All Transactions</p>
                 </CardTitle>
-                <Button>Add new transaction</Button>
             </CardHeader>
             <CardContent>
                 <Table>
                     <TableHeader>
                         <TableRow>
                             <TableHead>Customer ID</TableHead>
-                            <TableHead>Pawned Item ID</TableHead>
-                            <TableHead>Type</TableHead>
+                            <TableHead>Customer</TableHead>
+                            <TableHead>Asset</TableHead>
+                            <TableHead>Status</TableHead>
                             <TableHead>Amount</TableHead>
                             <TableHead>Date</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {currentTransactions.map((transaction) => (
-                            <TableRow key={transaction.id}>
-                                <TableCell>{transaction.customerId}</TableCell>
-                                <TableCell>{transaction.pawnedItemId}</TableCell>
+                        {currentTransactions.map((transaction, index) => (
+                            <TableRow className={`${index & 1 ? 'bg-white' : 'bg-slate-50'} hover:bg-gray-300`} key={transaction.id}>
+                                <TableCell>{transaction.customer['id']}</TableCell>
+                                <TableCell>{transaction.customer['name']}</TableCell>
+                                <TableCell>{transaction.asset['name']}</TableCell>
                                 <TableCell>
-                                    <Badge>{transaction.type}</Badge>
+                                    <Badge variant={transaction.asset.status === 'redeemed' ? 'secondary' : 'default'}>{transaction.asset.status}</Badge>
                                 </TableCell>
                                 <TableCell>{transaction.amount}</TableCell>
                                 <TableCell>{new Date(transaction.date).toLocaleDateString()}</TableCell>

@@ -1,6 +1,7 @@
 import { connectDb } from '@/lib/db';
 import { NextResponse, NextRequest } from 'next/server';
 import { Transaction } from '@/lib/models/transaction';
+import { getTransactionsWithDetails } from '@/lib/controllers/transaction.controller';
 
 export async function GET() {
     try {
@@ -9,7 +10,7 @@ export async function GET() {
         if (!db) {
             return NextResponse.json({}, { status: 400, statusText: 'Error connecting to database' });
         }
-        const transactions = await db.collection('transactions').find({}).toArray();
+        const transactions = await getTransactionsWithDetails();
         return NextResponse.json(transactions);
     } catch (error) {
         return NextResponse.json({ error }, { status: 500 });

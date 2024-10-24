@@ -1,11 +1,9 @@
 'use client';
 
-import { useAuth } from '@/lib/hooks/useAuth';
-import { useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui';
 import { Chart as ChartJS, CategoryScale } from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
-import { Banknote } from 'lucide-react';
+import { useData } from '@/lib/hooks/useData';
 
 ChartJS.register(CategoryScale);
 
@@ -129,11 +127,15 @@ const NewTransactionsChart = () => {
             }}
         />
     );
-}
+};
 
 export const Dashboard = () => {
+    const { useTransactionQuery } = useData();
+
+    const { data: transactions, isPending } = useTransactionQuery();
+
     return (
-        <div className='w-full h-auto flex flex-wrap gap-5'>
+        <div className="w-full h-auto flex flex-wrap gap-5">
             <div className="w-full h-auto flex flex-wrap rounded-md gap-5 justify-between">
                 <Card className={'flex-1 basis-60 min-h-40'}>
                     <CardHeader className={'flex flex-row justify-between'}>
@@ -142,8 +144,8 @@ export const Dashboard = () => {
                             <p className="text-xs font-normal">Last 7 days</p>
                         </CardTitle>
                         <CardDescription>
-                            <span className="text-black font-semibold">
-                                Total :
+                            <span className="text-black roboto-medium">
+                                Total:{' '}
                                 {new Intl.NumberFormat('vi-VI', {
                                     style: 'currency',
                                     currency: 'VND',

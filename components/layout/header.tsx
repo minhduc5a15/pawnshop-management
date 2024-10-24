@@ -25,7 +25,7 @@ export function Header() {
         <header className="bg-white shadow-sm">
             <div className="flex items-center justify-between px-6 py-4">
                 <div className="flex items-center">
-                    <Button variant="ghost" size="icon" className="md:hidden mr-2 cursor-pointer" onClick={openSidebar}>
+                    <Button variant="ghost" size="icon" className="lg:hidden mr-2 cursor-pointer" onClick={openSidebar}>
                         <Menu className="h-6 w-6" />
                     </Button>
                     <h2 className="text-xl font-semibold text-gray-800">Dashboard</h2>

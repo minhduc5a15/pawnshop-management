@@ -11,3 +11,4 @@ export * from './avatar';
 export * from './dropdown-menu';
 export * from './table';
 export * from './select';
+export * from "./flexwrap"

@@ -19,8 +19,17 @@ export const GlobalStoreProvider = ({ children }: GlobalStoreProviderProps) => {
     const { setWindowDimensions, setSearchTransaction, setTransactionFilter, currentPage } = store.current.getState();
 
     useEffect(() => {
+        console.log(currentPage);
+    }, [currentPage]);
+
+    useEffect(() => {
         const handleResize = () => {
-            !!setWindowDimensions && setWindowDimensions({ width: window.innerWidth, height: window.innerHeight });
+            if (typeof window !== 'undefined')
+                !!setWindowDimensions &&
+                    setWindowDimensions({
+                        width: window.innerWidth,
+                        height: window.innerHeight,
+                    });
         };
 
         window.addEventListener('resize', handleResize);
