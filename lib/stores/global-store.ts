@@ -6,7 +6,7 @@ export type GlobalStates = {
     currentPage: string;
     isOpenSidebar: boolean;
     windowDimensions: { width: number; height: number };
-    searchTransaction: string;
+    searchTransactionValue: string;
     transactionFilter: TransactionTypes;
 };
 
@@ -15,7 +15,7 @@ export type GlobalActions = {
     closeSidebar: () => void;
     openSidebar: () => void;
     setWindowDimensions?: (dimensions: { width: number; height: number }) => void;
-    setSearchTransaction: (searchTransaction: string) => void;
+    setSearchTransactionValue: (searchTransactionValue: string) => void;
     setTransactionFilter: (filter: TransactionTypes) => void;
 };
 
@@ -35,7 +35,7 @@ export const defaultInitState: GlobalStates = {
         width: typeof window !== 'undefined' ? window.innerWidth : 0,
         height: typeof window !== 'undefined' ? window.innerHeight : 0,
     },
-    searchTransaction: '',
+    searchTransactionValue: '',
     transactionFilter: 'all',
 };
 
@@ -46,7 +46,7 @@ export const createGlobalStore = (initState: GlobalStates = defaultInitState) =>
         closeSidebar: () => set({ isOpenSidebar: false }),
         openSidebar: () => set({ isOpenSidebar: true }),
         setWindowDimensions: (dimensions: { width: number; height: number }) => set({ windowDimensions: dimensions }),
-        setSearchTransaction: (searchTransaction: string) => set({ searchTransaction }),
+        setSearchTransactionValue: (searchTransactionValue: string) => set({ searchTransactionValue }),
         setTransactionFilter: (filter: TransactionTypes) => set({ transactionFilter: filter }),
     }));
 };

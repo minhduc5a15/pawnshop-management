@@ -16,7 +16,7 @@ export interface GlobalStoreProviderProps {
 export const GlobalStoreProvider = ({ children }: GlobalStoreProviderProps) => {
     const store = useRef<GlobalStoreApi>(createGlobalStore());
 
-    const { setWindowDimensions, setSearchTransaction, setTransactionFilter, currentPage } = store.current.getState();
+    const { setWindowDimensions, setSearchTransactionValue, setTransactionFilter, currentPage } = store.current.getState();
 
     useEffect(() => {
         console.log(currentPage);
@@ -42,7 +42,7 @@ export const GlobalStoreProvider = ({ children }: GlobalStoreProviderProps) => {
         const searchParams = new URLSearchParams(window.location.search);
 
         if (searchParams.get('search')) {
-            setSearchTransaction(searchParams.get('search') || '');
+            setSearchTransactionValue(searchParams.get('search') || '');
         }
 
         if (searchParams.get('filter')) {
@@ -52,7 +52,7 @@ export const GlobalStoreProvider = ({ children }: GlobalStoreProviderProps) => {
             }
             setTransactionFilter(filter as TransactionTypes);
         }
-    }, [currentPage, setSearchTransaction, setTransactionFilter]);
+    }, [currentPage, setSearchTransactionValue, setTransactionFilter]);
 
     return <GlobalStoreContext.Provider value={store.current}>{children}</GlobalStoreContext.Provider>;
 };

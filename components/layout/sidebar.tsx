@@ -19,7 +19,7 @@ const SidebarItems: SidebarItem[] = [
 ];
 
 export function Sidebar() {
-    const { isOpenSidebar, closeSidebar, transactionFilter, searchTransaction } = useGlobal();
+    const { isOpenSidebar, closeSidebar, transactionFilter, searchTransactionValue } = useGlobal();
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -61,7 +61,7 @@ export function Sidebar() {
                         onClick={() => {
                             if (item.name === 'Transactions') {
                                 const searchParams = new URLSearchParams();
-                                searchParams.append('search', searchTransaction);
+                                searchParams.append('search', searchTransactionValue);
                                 searchParams.append('filter', transactionFilter);
                                 router.push(`/transactions?${searchParams.toString()}`);
                             }

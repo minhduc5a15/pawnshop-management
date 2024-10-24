@@ -1,5 +1,22 @@
+'use server';
+
 import { connectDb } from '@/lib/db';
 import { Transaction } from '@/lib/models/transaction';
+import { NextResponse } from 'next/server';
+
+export const getTransactions = async () => {
+    try {
+        const db = await connectDb();
+
+        if (!db) {
+            return NextResponse.json({}, { status: 400, statusText: 'Error connecting to database' });
+        }
+        const transactions = await getTransactionsWithDetails();
+        return NextResponse.json(transactions);
+    } catch (error) {
+        return NextResponse.json({ error }, { status: 500 });
+    }
+};
 
 export const getTransactionsWithDetails = async () => {
     const db = await connectDb();
